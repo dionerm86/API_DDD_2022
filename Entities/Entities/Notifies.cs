@@ -5,7 +5,7 @@ public class Notifies
 {
     public Notifies()
     {
-        Notifies = new List<Notifies>();
+        Notify = new List<Notifies>();
     }
 
     [NotMapped]
@@ -13,12 +13,12 @@ public class Notifies
     [NotMapped]
     public string Mensagem { get; set; }
     [NotMapped]
-    public List<Notifies> Notifies { get; set; }
+    public List<Notifies> Notify { get; set; }
     public bool ValidarPropriedadeString(string valor, string nomePropriedade)
     {
         if (string.IsNullOrWhiteSpace(valor) || string.IsNullOrWhiteSpace(nomePropriedade))
         {
-            Notifies.Add(new Notifies
+            Notify.Add(new Notifies
             {
                 Mensagem = "Campo obrigatório",
                 NomePropriedade = nomePropriedade
@@ -34,7 +34,7 @@ public class Notifies
     {
         if (valor < 1 || string.IsNullOrWhiteSpace(nomePropriedade))
         {
-            Notifies.Add(new Notifies
+            Notify.Add(new Notifies
             {
                 Mensagem = "Campo obrigatório",
                 NomePropriedade = nomePropriedade
