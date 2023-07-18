@@ -37,7 +37,7 @@ namespace WebApis.Token
 
         public TokenJWTBuilder AddClaim(string type, string value)
         {
-            this.AddClaim(type, value);
+            this.claims.Add(type, value);
             return this;
         }
     }
