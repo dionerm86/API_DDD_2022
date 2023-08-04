@@ -90,10 +90,18 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+var devCliente = "http://localhost:porta";
+app.UseCors(x => x
+.AllowAnyOrigin()
+.AllowAnyMethod()
+.AllowAnyHeader().WithOrigins(new[] { devCliente }));
+
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
+app.UseSwagger();
 app.MapControllers();
 
 app.Run();
